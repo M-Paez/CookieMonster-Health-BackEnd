@@ -1,7 +1,13 @@
 import express from 'express';
+
+// Enable CORS for all routes
+import cors from "cors";
 const port = process.env.PORT || 3000
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.get("/api/ping", (req, res) => {
     console.log("Ping API was called");
