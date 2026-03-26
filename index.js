@@ -2,6 +2,16 @@ import express from 'express';
 const port = process.env.PORT || 3000
 
 const app = express();
+
+app.get("/api/ping", (req, res) => {
+    console.log("Ping API was called");
+    
+    const response = { message: "Pinging API Successful" };
+    
+    console.log("Ping API response:", response);
+    res.json(response);
+});
+
 app.use(express.json());
 
 app.post('/risk-calculation', (req, res) => {
